@@ -1,0 +1,17 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400d9446: run_inference at /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:163
+[0m
+[0;33m0x400d9444: run_inference at /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:163
+0x400d9459: run_inference at /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:167
+[0m
+[0;33m0x400d9443: run_inference at /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:162 (discriminator 1)
+0x400d95ef: inference_cli_handler at /home/andrespf02/esp/final2/person_detection/main/esp_cli.c:117
+0x400d9bcf: esp_console_run at /home/andrespf02/esp/idf/esp-idf/components/console/commands.c:231
+0x400d9dd0: esp_console_repl_task at /home/andrespf02/esp/idf/esp-idf/components/console/esp_console_common.c:177
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0m

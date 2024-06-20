@@ -1,0 +1,4 @@
+/home/andrespf02/esp/final2/person_detection/main/detection_responder.cc: In function 'void RespondToDetection(float, float)':
+/home/andrespf02/esp/final2/person_detection/main/detection_responder.cc:62:7: warning: unused variable 'person_score_int' [-Wunused-variable]
+   62 |   int person_score_int = (person_score) * 100 + 0.5;
+      |       ^~~~~~~~~~~~~~~~

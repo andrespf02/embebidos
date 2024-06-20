@@ -1,0 +1,24 @@
+In file included from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:22:
+/home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+/home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use 'is_standard_layout && is_trivial' instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from /home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/stl_pair.h:60,
+                 from /home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/utility:69,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/c/common.h:1463,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/c/common.h:31,
+                 from /home/andrespf02/esp/final2/person_detection/main/detection_responder.h:22,
+                 from /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:18:
+/home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/type_traits:819:5: note: declared here
+  819 |     is_pod
+      |     ^~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void run_inference(void*)':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:193:13: warning: unused variable 'endTimeTotal' [-Wunused-variable]
+  193 |   long long endTimeTotal = 0;
+      |             ^~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:194:13: warning: unused variable 'startTimePre' [-Wunused-variable]
+  194 |   long long startTimePre = 0;
+      |             ^~~~~~~~~~~~

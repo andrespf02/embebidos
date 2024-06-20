@@ -1,0 +1,296 @@
+[  0%] Built target partition_table_bin
+[  0%] Built target custom_bundle
+[  0%] Built target memory.ld
+[  0%] Built target sections.ld.in
+[  0%] Built target _project_elf_src
+[  0%] Performing build step for 'bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_psram
+[  1%] Built target __idf_esp_psram
+Consolidate compiler generated dependencies of target __idf_esp_https_ota
+[  1%] Built target __idf_esp_https_ota
+Consolidate compiler generated dependencies of target __idf_log
+[  1%] Built target _project_elf_src
+[  4%] Built target __idf_log
+Consolidate compiler generated dependencies of target __idf_esp_http_server
+[  2%] Built target __idf_esp_http_server
+Consolidate compiler generated dependencies of target __idf_esp_rom
+Consolidate compiler generated dependencies of target __idf_esp_http_client
+[ 11%] Built target __idf_esp_rom
+[  2%] Built target __idf_esp_http_client
+Consolidate compiler generated dependencies of target __idf_esp_common
+[ 13%] Built target __idf_esp_common
+Consolidate compiler generated dependencies of target __idf_tcp_transport
+Consolidate compiler generated dependencies of target __idf_esp_hw_support
+[  3%] Built target __idf_tcp_transport
+[ 23%] Built target __idf_esp_hw_support
+Consolidate compiler generated dependencies of target __idf_esp_system
+Consolidate compiler generated dependencies of target __idf_esp_gdbstub
+[ 24%] Built target __idf_esp_system
+[  3%] Built target __idf_esp_gdbstub
+Consolidate compiler generated dependencies of target __idf_efuse
+Consolidate compiler generated dependencies of target __idf_esp_eth
+[ 32%] Built target __idf_efuse
+[  4%] Built target __idf_esp_eth
+Consolidate compiler generated dependencies of target __idf_bootloader_support
+Consolidate compiler generated dependencies of target __idf_esp_adc
+[ 54%] Built target __idf_bootloader_support
+[  5%] Built target __idf_esp_adc
+Consolidate compiler generated dependencies of target __idf_esp_bootloader_format
+[ 55%] Built target __idf_esp_bootloader_format
+Consolidate compiler generated dependencies of target __idf_spi_flash
+Consolidate compiler generated dependencies of target __idf_esp-tls
+[ 57%] Built target __idf_spi_flash
+[  5%] Built target __idf_esp-tls
+Consolidate compiler generated dependencies of target __idf_http_parser
+Consolidate compiler generated dependencies of target __idf_hal
+[  5%] Built target __idf_http_parser
+[ 65%] Built target __idf_hal
+Consolidate compiler generated dependencies of target __idf_micro-ecc
+[ 68%] Built target __idf_micro-ecc
+Consolidate compiler generated dependencies of target __idf_esp_wifi
+[  6%] Built target __idf_esp_wifi
+Consolidate compiler generated dependencies of target __idf_soc
+[ 91%] Built target __idf_soc
+Consolidate compiler generated dependencies of target __idf_esp_coex
+[  6%] Built target __idf_esp_coex
+Consolidate compiler generated dependencies of target __idf_xtensa
+[ 93%] Built target __idf_xtensa
+Consolidate compiler generated dependencies of target __idf_main
+[ 95%] Built target __idf_main
+Consolidate compiler generated dependencies of target bootloader.elf
+[ 98%] Built target bootloader.elf
+[100%] Built target gen_project_binary
+Bootloader binary size 0x6f50 bytes. 0xb0 bytes (1%) free.
+[100%] Built target bootloader_check_size
+Consolidate compiler generated dependencies of target __idf_wpa_supplicant
+[ 13%] Built target __idf_wpa_supplicant
+[100%] Built target app
+[ 13%] No install step for 'bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_netif
+[ 13%] Completed 'bootloader'
+[ 14%] Built target bootloader
+[ 15%] Built target __idf_esp_netif
+Consolidate compiler generated dependencies of target __idf_lwip
+[ 22%] Built target __idf_lwip
+Consolidate compiler generated dependencies of target __idf_vfs
+[ 23%] Built target __idf_vfs
+Consolidate compiler generated dependencies of target __idf_esp_vfs_console
+[ 23%] Built target __idf_esp_vfs_console
+Consolidate compiler generated dependencies of target __idf_esp_phy
+[ 24%] Built target __idf_esp_phy
+Consolidate compiler generated dependencies of target __idf_driver
+[ 25%] Built target __idf_driver
+Consolidate compiler generated dependencies of target __idf_esp_driver_ledc
+[ 25%] Built target __idf_esp_driver_ledc
+Consolidate compiler generated dependencies of target __idf_esp_driver_i2c
+[ 25%] Built target __idf_esp_driver_i2c
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdm
+[ 25%] Built target __idf_esp_driver_sdm
+Consolidate compiler generated dependencies of target __idf_esp_driver_rmt
+[ 25%] Built target __idf_esp_driver_rmt
+Consolidate compiler generated dependencies of target __idf_esp_driver_dac
+[ 25%] Built target __idf_esp_driver_dac
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdio
+[ 25%] Built target __idf_esp_driver_sdio
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdspi
+[ 25%] Built target __idf_esp_driver_sdspi
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdmmc
+[ 26%] Built target __idf_esp_driver_sdmmc
+Consolidate compiler generated dependencies of target __idf_sdmmc
+[ 27%] Built target __idf_sdmmc
+Consolidate compiler generated dependencies of target __idf_esp_driver_i2s
+[ 28%] Built target __idf_esp_driver_i2s
+Consolidate compiler generated dependencies of target __idf_esp_driver_mcpwm
+[ 28%] Built target __idf_esp_driver_mcpwm
+Consolidate compiler generated dependencies of target __idf_esp_driver_spi
+[ 28%] Built target __idf_esp_driver_spi
+Consolidate compiler generated dependencies of target __idf_esp_driver_pcnt
+[ 29%] Built target __idf_esp_driver_pcnt
+Consolidate compiler generated dependencies of target __idf_nvs_flash
+[ 30%] Built target __idf_nvs_flash
+Consolidate compiler generated dependencies of target __idf_esp_event
+[ 30%] Built target __idf_esp_event
+Consolidate compiler generated dependencies of target __idf_esp_driver_uart
+[ 31%] Built target __idf_esp_driver_uart
+Consolidate compiler generated dependencies of target __idf_esp_ringbuf
+[ 31%] Built target __idf_esp_ringbuf
+Consolidate compiler generated dependencies of target __idf_esp_driver_gptimer
+[ 31%] Built target __idf_esp_driver_gptimer
+Consolidate compiler generated dependencies of target __idf_esp_timer
+[ 32%] Built target __idf_esp_timer
+Consolidate compiler generated dependencies of target __idf_cxx
+[ 33%] Built target __idf_cxx
+Consolidate compiler generated dependencies of target __idf_pthread
+[ 33%] Built target __idf_pthread
+Consolidate compiler generated dependencies of target __idf_newlib
+[ 35%] Built target __idf_newlib
+Consolidate compiler generated dependencies of target __idf_freertos
+[ 37%] Built target __idf_freertos
+Consolidate compiler generated dependencies of target __idf_esp_hw_support
+[ 41%] Built target __idf_esp_hw_support
+Consolidate compiler generated dependencies of target __idf_soc
+[ 43%] Built target __idf_soc
+Consolidate compiler generated dependencies of target __idf_heap
+[ 44%] Built target __idf_heap
+Consolidate compiler generated dependencies of target __idf_log
+[ 45%] Built target __idf_log
+Consolidate compiler generated dependencies of target __idf_hal
+[ 48%] Built target __idf_hal
+Consolidate compiler generated dependencies of target __idf_esp_rom
+[ 48%] Built target __idf_esp_rom
+Consolidate compiler generated dependencies of target __idf_esp_common
+[ 49%] Built target __idf_esp_common
+Consolidate compiler generated dependencies of target __idf_esp_system
+[ 52%] Built target __idf_esp_system
+Consolidate compiler generated dependencies of target __idf_spi_flash
+[ 54%] Built target __idf_spi_flash
+Consolidate compiler generated dependencies of target __idf_esp_mm
+[ 54%] Built target __idf_esp_mm
+Consolidate compiler generated dependencies of target __idf_bootloader_support
+[ 56%] Built target __idf_bootloader_support
+Consolidate compiler generated dependencies of target __idf_efuse
+[ 57%] Built target __idf_efuse
+Consolidate compiler generated dependencies of target __idf_esp_partition
+[ 57%] Built target __idf_esp_partition
+Consolidate compiler generated dependencies of target __idf_app_update
+[ 57%] Built target __idf_app_update
+Consolidate compiler generated dependencies of target __idf_esp_bootloader_format
+[ 57%] Built target __idf_esp_bootloader_format
+Consolidate compiler generated dependencies of target __idf_esp_app_format
+[ 57%] Built target __idf_esp_app_format
+Consolidate compiler generated dependencies of target mbedtls
+[ 59%] Built target mbedtls
+Consolidate compiler generated dependencies of target mbedx509
+[ 60%] Built target mbedx509
+Consolidate compiler generated dependencies of target mbedcrypto
+[ 68%] Built target mbedcrypto
+Consolidate compiler generated dependencies of target p256m
+[ 68%] Built target p256m
+Consolidate compiler generated dependencies of target everest
+[ 68%] Built target everest
+Consolidate compiler generated dependencies of target __idf_mbedtls
+[ 68%] Built target __idf_mbedtls
+Consolidate compiler generated dependencies of target __idf_esp_pm
+[ 68%] Built target __idf_esp_pm
+Consolidate compiler generated dependencies of target __idf_esp_driver_gpio
+[ 69%] Built target __idf_esp_driver_gpio
+Consolidate compiler generated dependencies of target __idf_xtensa
+[ 70%] Built target __idf_xtensa
+Consolidate compiler generated dependencies of target __idf_esp_driver_cam
+Consolidate compiler generated dependencies of target __idf_esp_hid
+Consolidate compiler generated dependencies of target __idf_esp_https_server
+Consolidate compiler generated dependencies of target __idf_app_trace
+[ 70%] Built target __idf_esp_driver_cam
+[ 72%] Built target __idf_static_images
+[ 72%] Built target __idf_esp_https_server
+[ 73%] Built target __idf_esp_hid
+[ 72%] Built target __idf_app_trace
+Consolidate compiler generated dependencies of target __idf_unity
+Consolidate compiler generated dependencies of target __idf_esp_lcd
+Consolidate compiler generated dependencies of target __idf_protobuf-c
+[ 73%] Built target __idf_unity
+Consolidate compiler generated dependencies of target __idf_espressif__esp-nn
+[ 73%] Built target __idf_protobuf-c
+Consolidate compiler generated dependencies of target __idf_console
+Consolidate compiler generated dependencies of target __idf_json
+[ 73%] Built target __idf_esp_lcd
+Consolidate compiler generated dependencies of target __idf_wear_levelling
+[ 73%] Built target __idf_json
+[ 74%] Built target __idf_espressif__esp-nn
+[ 75%] Built target __idf_console
+Consolidate compiler generated dependencies of target __idf_mqtt
+Consolidate compiler generated dependencies of target __idf_nvs_sec_provider
+[ 75%] Built target __idf_wear_levelling
+Consolidate compiler generated dependencies of target __idf_perfmon
+[ 75%] Built target __idf_nvs_sec_provider
+Consolidate compiler generated dependencies of target __idf_espcoredump
+[ 75%] Built target __idf_mqtt
+[ 76%] Built target __idf_perfmon
+Consolidate compiler generated dependencies of target __idf_cmock
+Consolidate compiler generated dependencies of target __idf_espressif__esp32-camera
+[ 76%] Built target __idf_cmock
+Consolidate compiler generated dependencies of target __idf_spiffs
+[ 77%] Built target __idf_espcoredump
+[ 79%] Built target __idf_espressif__esp32-camera
+[ 79%] Built target __idf_spiffs
+Consolidate compiler generated dependencies of target __idf_fatfs
+Consolidate compiler generated dependencies of target __idf_protocomm
+[ 80%] Built target __idf_fatfs
+[ 81%] Built target __idf_protocomm
+Consolidate compiler generated dependencies of target __idf_esp_local_ctrl
+Consolidate compiler generated dependencies of target __idf_wifi_provisioning
+[ 82%] Built target __idf_esp_local_ctrl
+[ 83%] Built target __idf_wifi_provisioning
+Consolidate compiler generated dependencies of target __idf_espressif__esp-tflite-micro
+[ 98%] Built target __idf_espressif__esp-tflite-micro
+Consolidate compiler generated dependencies of target __idf_main
+[100%] Built target __idf_main
+[100%] Built target __ldgen_output_sections.ld
+Consolidate compiler generated dependencies of target person_detection.elf
+[100%] Built target person_detection.elf
+[100%] Built target gen_project_binary
+person_detection.bin binary size 0xa3470 bytes. Smallest app partition is 0x180000 bytes. 0xdcb90 bytes (57%) free.
+[100%] Built target app_check_size
+[100%] Built target app
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 bootloader/bootloader.bin 0x10000 person_detection.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.dev3
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-D0WDQ6-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 34:98:7a:b6:b7:44
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000b3fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 28496 bytes to 17353...
+Writing at 0x00001000... (50 %)
+Writing at 0x00007a47... (100 %)
+Wrote 28496 bytes (17353 compressed) at 0x00001000 in 0.8 seconds (effective 303.2 kbit/s)...
+Hash of data verified.
+Compressed 668784 bytes to 445174...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001d4da... (7 %)
+Writing at 0x00021f82... (10 %)
+Writing at 0x000263a9... (14 %)
+Writing at 0x0002a8b7... (17 %)
+Writing at 0x0002ecc4... (21 %)
+Writing at 0x000330c6... (25 %)
+Writing at 0x00037565... (28 %)
+Writing at 0x0003b97f... (32 %)
+Writing at 0x0003fce2... (35 %)
+Writing at 0x0004420a... (39 %)
+Writing at 0x0004863f... (42 %)
+Writing at 0x0004c9f7... (46 %)
+Writing at 0x00050e01... (50 %)
+Writing at 0x0005798d... (53 %)
+Writing at 0x00065340... (57 %)
+Writing at 0x00070900... (60 %)
+Writing at 0x00075e76... (64 %)
+Writing at 0x0007b51c... (67 %)
+Writing at 0x00080517... (71 %)
+Writing at 0x000855e3... (75 %)
+Writing at 0x0008bfa4... (78 %)
+Writing at 0x00091e87... (82 %)
+Writing at 0x00098e3f... (85 %)
+Writing at 0x000a0c73... (89 %)
+Writing at 0x000a6edb... (92 %)
+Writing at 0x000ac61f... (96 %)
+Writing at 0x000b2239... (100 %)
+Wrote 668784 bytes (445174 compressed) at 0x00010000 in 10.8 seconds (effective 495.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.1 seconds (effective 473.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+[100%] Built target flash

@@ -1,0 +1,4 @@
+make[2]: *** No rule to make target '../static_images/sample_images/image9', needed by 'image9.S'.  Stop.
+make[1]: *** [CMakeFiles/Makefile2:5564: esp-idf/static_images/CMakeFiles/__idf_static_images.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:136: all] Error 2
