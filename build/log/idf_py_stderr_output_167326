@@ -1,0 +1,83 @@
+/home/andrespf02/esp/final2/person_detection/main/app_camera_esp.c: In function 'app_camera_init':
+/home/andrespf02/esp/final2/person_detection/main/app_camera_esp.c:62:3: warning: 'pin_sscb_sda' is deprecated: please use pin_sccb_sda instead [-Wdeprecated-declarations]
+   62 |   config.pin_sscb_sda = CAMERA_PIN_SIOD;
+      |   ^~~~~~
+In file included from /home/andrespf02/esp/final2/person_detection/main/app_camera_esp.h:20,
+                 from /home/andrespf02/esp/final2/person_detection/main/app_camera_esp.c:16:
+/home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp32-camera/driver/include/esp_camera.h:123:13: note: declared here
+  123 |         int pin_sscb_sda __attribute__((deprecated("please use pin_sccb_sda instead")));           /*!< GPIO pin for camera SDA line (legacy name) */
+      |             ^~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/app_camera_esp.c:63:3: warning: 'pin_sscb_scl' is deprecated: please use pin_sccb_scl instead [-Wdeprecated-declarations]
+   63 |   config.pin_sscb_scl = CAMERA_PIN_SIOC;
+      |   ^~~~~~
+/home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp32-camera/driver/include/esp_camera.h:127:13: note: declared here
+  127 |         int pin_sscb_scl __attribute__((deprecated("please use pin_sccb_scl instead")));           /*!< GPIO pin for camera SCL line (legacy name) */
+      |             ^~~~~~~~~~~~
+In file included from /home/andrespf02/esp/final2/person_detection/main/image_provider.cc:23:
+/home/andrespf02/esp/idf/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+In file included from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:22:
+/home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+/home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use 'is_standard_layout && is_trivial' instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from /home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/stl_pair.h:60,
+                 from /home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/utility:69,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/c/common.h:1463,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/c/common.h:31,
+                 from /home/andrespf02/esp/final2/person_detection/main/detection_responder.h:22,
+                 from /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:18:
+/home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/type_traits:819:5: note: declared here
+  819 |     is_pod
+      |     ^~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void loop()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:135:3: error: 'startTimeTotal' was not declared in this scope
+  135 |   startTimeTotal = esp_timer_get_time();
+      |   ^~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:140:3: error: 'endTimePre' was not declared in this scope
+  140 |   endTimePre = esp_timer_get_time();
+      |   ^~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:141:3: error: 'preprocessingTime' was not declared in this scope
+  141 |   preprocessingTime = endTimePre - startTimeTotal;
+      |   ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:142:3: error: 'startTimeInf' was not declared in this scope
+  142 |   startTimeInf = esp_timer_get_time();
+      |   ^~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:148:3: error: 'endTimeInf' was not declared in this scope
+  148 |   endTimeInf = esp_timer_get_time();
+      |   ^~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:149:3: error: 'inferenceExecutionTime' was not declared in this scope
+  149 |   inferenceExecutionTime = startTimeInf - endTimeInf;
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:151:3: error: 'startTimePost' was not declared in this scope
+  151 |   startTimePost = esp_timer_get_time();
+      |   ^~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:166:3: error: 'endTimePost' was not declared in this scope
+  166 |   endTimePost = esp_timer_get_time();
+      |   ^~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:167:3: error: 'postprocessingTime' was not declared in this scope
+  167 |   postprocessingTime = endTimePost - startTimePost;
+      |   ^~~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:168:3: error: 'totalInferenceTime' was not declared in this scope
+  168 |   totalInferenceTime = startTimeTotal - endTimePost;
+      |   ^~~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:169:3: error: 'totalInferenceTimeSum' was not declared in this scope
+  169 |   totalInferenceTimeSum = preprocessingTime + inferenceExecutionTime + postprocessingTime;
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void run_inference(void*)':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:193:38: warning: unused variable 'icount_start' [-Wunused-variable]
+  193 |   unsigned ccount_start, ccount_end, icount_start, icount_end;
+      |                                      ^~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:206:13: warning: unused variable 'endTimeTotal' [-Wunused-variable]
+  206 |   long long endTimeTotal = 0;
+      |             ^~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:207:13: warning: unused variable 'startTimePre' [-Wunused-variable]
+  207 |   long long startTimePre = 0;
+      |             ^~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:118: esp-idf/main/CMakeFiles/__idf_main.dir/main_functions.cc.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5675: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

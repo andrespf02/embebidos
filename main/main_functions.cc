@@ -32,7 +32,9 @@ limitations under the License.
 #include <esp_log.h>
 #include "esp_main.h"
 
-// Globales para medición de tiempo
+#include "driver/gpio.h" /* Manejo de PINES */
+
+#define LED_PIN 2
 
 
 // Globals, used for compatibility with Arduino-style sketches.
@@ -58,8 +60,21 @@ constexpr int kTensorArenaSize = 90 * 1024 + scratchBufSize; //81
 static uint8_t *tensor_arena;//[kTensorArenaSize]; // Maybe we should move this to external
 }  // namespace
 
+void enable_instruction_counter() {
+    unsigned int icount_level;
+    // Leer el valor actual del ICOUNTLEVEL
+    RSR(ICOUNTLEVEL, icount_level);
+    // Establecer el ICOUNTLEVEL a 2 para habilitar el contador de instrucciones
+    // El valor 2 es el nivel predeterminado para habilitar el contador en muchas configuraciones de Xtensa
+    WSR(ICOUNTLEVEL, 2);
+}
+
 // The name of this function is important for Arduino compatibility.
 void setup() {
+  /*Definicion del pin */ 
+  gpio_reset_pin(static_cast<gpio_num_t>(LED_PIN));
+  gpio_set_direction(static_cast<gpio_num_t>(LED_PIN), GPIO_MODE_OUTPUT);
+
   // Map the model into a usable data structure. This doesn't involve any
   // copying or parsing, it's a very lightweight operation.
   model = tflite::GetModel(g_person_detect_model_data);
@@ -94,6 +109,7 @@ void setup() {
   micro_op_resolver.AddDepthwiseConv2D();
   micro_op_resolver.AddReshape();
   micro_op_resolver.AddSoftmax();
+  //micro_op_resolver.AddLogistic();
 
   // Build an interpreter to run the model with.
   // NOLINTNEXTLINE(runtime-global-variables)
@@ -124,23 +140,28 @@ void setup() {
 #ifndef CLI_ONLY_INFERENCE
 // The name of this function is important for Arduino compatibility.
 void loop() {
-  startTimeTotal = esp_timer_get_time();
+  //startTimeTotal = esp_timer_get_time();
   // Get image from provider.
   if (kTfLiteOk != GetImage(kNumCols, kNumRows, kNumChannels, input->data.int8)) {
     MicroPrintf("Image capture failed.");
   }
-  endTimePre = esp_timer_get_time();
-  preprocessingTime = endTimePre - startTimeTotal;
-  startTimeInf = esp_timer_get_time();
+  //  for (int i = 0; i < kNumCols * kNumRows; i++) {
+  //  printf("%d, ", input->data.int8[i]);
+  //}
+  //endTimePre = esp_timer_get_time();
+  //preprocessingTime = endTimePre - startTimeTotal;
+  //startTimeInf = esp_timer_get_time();
 
   // Run the model on this input and make sure it succeeds.
   if (kTfLiteOk != interpreter->Invoke()) {
     MicroPrintf("Invoke failed.");
   }
-  endTimeInf = esp_timer_get_time();
-  inferenceExecutionTime = startTimeInf - endTimeInf;
+  //endTimeInf = esp_timer_get_time();
+  //inferenceExecutionTime = startTimeInf - endTimeInf;
 
-  startTimePost = esp_timer_get_time();
+  //startTimePost = esp_timer_get_time();
+  
+
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
@@ -152,19 +173,28 @@ void loop() {
   float open_score_f =
       (open_score - output->params.zero_point) * output->params.scale;
 
+
   // Respond to detection
   RespondToDetection(close_score_f, open_score_f);
+    if (open_score_f * 100 + 0.5 >= 65)
+    {
+      gpio_set_level(static_cast<gpio_num_t>(LED_PIN), 1);
+    } else {
+      gpio_set_level(static_cast<gpio_num_t>(LED_PIN), 0);
+    }
+
+
   
-  endTimePost = esp_timer_get_time();
-  postprocessingTime = endTimePost - startTimePost;
-  totalInferenceTime = startTimeTotal - endTimePost;
-  totalInferenceTimeSum = preprocessingTime + inferenceExecutionTime + postprocessingTime;
-  printf("Tiempo total de inferencia: %lld us\n", totalInferenceTime);
-  printf("Tiempo total de inferencia: %lld us\n", totalInferenceTimeSum);
-  printf("Tiempo de preprocessing: %lld us\n", preprocessingTime);
-  printf("Tiempo de ejecución de inferencia: %lld us\n", inferenceExecutionTime);
-  printf("Tiempo de postprocesamiento: %lld us\n", postprocessingTime);
-  vTaskDelay(1); // to avoid watchdog trigger
+  //endTimePost = esp_timer_get_time();
+  //postprocessingTime = endTimePost - startTimePost;
+  //totalInferenceTime = startTimeTotal - endTimePost;
+  //totalInferenceTimeSum = preprocessingTime + inferenceExecutionTime + postprocessingTime;
+  //printf("Tiempo total de inferencia: %lld us\n", totalInferenceTime);
+  //printf("Tiempo total de inferencia: %lld us\n", totalInferenceTimeSum);
+  //printf("Tiempo de preprocessing: %lld us\n", preprocessingTime);
+  //printf("Tiempo de ejecución de inferencia: %lld us\n", inferenceExecutionTime);
+  //printf("Tiempo de postprocesamiento: %lld us\n", postprocessingTime);
+  vTaskDelay(100); // to avoid watchdog trigger
 }
 #endif
 
@@ -181,6 +211,12 @@ void loop() {
 #endif
 
 void run_inference(void *ptr) {
+  enable_instruction_counter();
+  unsigned ccount_start, ccount_end, icount_start, icount_end;
+
+  RSR(CCOUNT, ccount_start); // Lee el contador de ciclos al inicio de la cuantización
+  WSR(ICOUNT, 0);            // Reinicia el contador de instrucciones antes de la cuantización
+
   long long startTimeTotal = 0;
   startTimeTotal = esp_timer_get_time();
   long long totalInferenceTime = 0;
@@ -189,7 +225,6 @@ void run_inference(void *ptr) {
   long long inferenceExecutionTime = 0;
   long long postprocessingTime = 0;
 
-  
   long long endTimeTotal = 0;
   long long startTimePre = 0;
   long long endTimePre = 0;
@@ -201,10 +236,25 @@ void run_inference(void *ptr) {
   /* Convert from uint8 picture data to int8 */
   for (int i = 0; i < kNumCols * kNumRows; i++) {
     input->data.int8[i] = ((uint8_t *) ptr)[i] ^ 0x80;
+    //printf("%d, ", input->data.int8[i]);
   }
   endTimePre = esp_timer_get_time();
   preprocessingTime = endTimePre - startTimeTotal;
   startTimeInf = esp_timer_get_time();
+
+  RSR(CCOUNT, ccount_end); // Lee el contador de ciclos al final de la cuantización
+  RSR(ICOUNT, icount_end); // Lee el contador de instrucciones al final de la cuantización
+
+  unsigned quantize_cycles = ccount_end - ccount_start;
+  unsigned quantize_instructions = icount_end;
+  float quantize_cpi = (float)quantize_cycles / (float)quantize_instructions;
+  printf("Image Quantization Cycles = %u\n", quantize_cycles);
+  printf("Image Quantization Instructions = %u\n", quantize_instructions);
+  printf("Image Quantization CPI = %f\n\n", quantize_cpi);
+
+  // Resetear contadores para la próxima medición
+  RSR(CCOUNT, ccount_start);
+  WSR(ICOUNT, 0);
 
 #if defined(COLLECT_CPU_STATS)
   long long start_time = esp_timer_get_time();
@@ -215,6 +265,16 @@ void run_inference(void *ptr) {
   }
   endTimeInf = esp_timer_get_time();
   inferenceExecutionTime = endTimeInf - startTimeInf;
+
+  RSR(CCOUNT, ccount_end);
+  RSR(ICOUNT, icount_end);
+
+  unsigned invoke_cycles = ccount_end - ccount_start;
+  unsigned invoke_instructions = icount_end;
+  float invoke_cpi = (float)invoke_cycles / (float)invoke_instructions;
+  printf("Invoke Cycles = %u\n", invoke_cycles);
+  printf("Invoke Instructions = %u\n", invoke_instructions);
+  printf("Invoke CPI = %f\n\n", invoke_cpi);
 
   startTimePost = esp_timer_get_time();
 
@@ -257,6 +317,9 @@ void run_inference(void *ptr) {
 
   TfLiteTensor* output = interpreter->output(0);
 
+  RSR(CCOUNT, ccount_start);
+  WSR(ICOUNT, 0);
+
   // Process the inference results.
   int8_t close_score = output->data.uint8[kCloseIndex];
   int8_t open_score = output->data.uint8[kOpenIndex];
@@ -267,13 +330,34 @@ void run_inference(void *ptr) {
       (open_score - output->params.zero_point) * output->params.scale;
   RespondToDetection(close_score_f, open_score_f);
 
+  
+
   endTimePost = esp_timer_get_time();
+  RSR(CCOUNT, ccount_end);
+  RSR(ICOUNT, icount_end);
+
   postprocessingTime = endTimePost - startTimePost;
   totalInferenceTime = endTimePost - startTimeTotal;
   totalInferenceTimeSum = preprocessingTime + inferenceExecutionTime + postprocessingTime;
-  printf("Tiempo total de inferencia: %lld us\n", totalInferenceTime);
-  printf("Tiempo total de inferencia: %lld us\n", totalInferenceTimeSum);
+  printf("\nTiempo total de inferencia: %lld us\n", totalInferenceTime);
+  printf("Tiempo total de inferencia por suma de subtasks: %lld us\n", totalInferenceTimeSum);
   printf("Tiempo de preprocessing: %lld us\n", preprocessingTime);
   printf("Tiempo de ejecución de inferencia: %lld us\n", inferenceExecutionTime);
-  printf("Tiempo de postprocesamiento: %lld us\n", postprocessingTime);
+  printf("Tiempo de postprocesamiento: %lld us\n\n", postprocessingTime);
+
+  
+
+  unsigned response_cycles = ccount_end - ccount_start;
+  unsigned response_instructions = icount_end;
+  float response_cpi = (float)response_cycles / (float)response_instructions;
+  printf("Response Cycles = %u\n", response_cycles);
+  printf("Response Instructions = %u\n", response_instructions);
+  printf("Response CPI = %f\n\n", response_cpi);
+
+  unsigned long long total_cycles = quantize_cycles + invoke_cycles + response_cycles;
+  unsigned long long total_instructions = quantize_instructions + invoke_instructions + response_instructions;
+  float average_cpi = (float)total_cycles / (float)total_instructions;
+  printf("Total Cycles = %llu\n", total_cycles);
+  printf("Total Instructions = %llu\n", total_instructions);
+  printf("Average CPI of the project = %f\n", average_cpi);
 }

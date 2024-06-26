@@ -1,0 +1,16 @@
+/home/andrespf02/esp/final2/person_detection/main/main.cc: In function 'void tf_main()':
+/home/andrespf02/esp/final2/person_detection/main/main.cc:25:18: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   25 | #define LED_GPIO 4
+      |                  ^
+      |                  |
+      |                  int
+/home/andrespf02/esp/final2/person_detection/main/main.cc:32:18: note: in expansion of macro 'LED_GPIO'
+   32 |   gpio_set_level(LED_GPIO, 1);
+      |                  ^~~~~~~~
+In file included from /home/andrespf02/esp/final2/person_detection/main/main.cc:21:
+/home/andrespf02/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:141:37: note:   initializing argument 1 of 'esp_err_t gpio_set_level(gpio_num_t, uint32_t)'
+  141 | esp_err_t gpio_set_level(gpio_num_t gpio_num, uint32_t level);
+      |                          ~~~~~~~~~~~^~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:104: esp-idf/main/CMakeFiles/__idf_main.dir/main.cc.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5675: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

@@ -1,0 +1,80 @@
+In file included from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:22:
+/home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+/home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use 'is_standard_layout && is_trivial' instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from /home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/stl_pair.h:60,
+                 from /home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/utility:69,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/c/common.h:1463,
+                 from /home/andrespf02/esp/final2/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/c/common.h:31,
+                 from /home/andrespf02/esp/final2/person_detection/main/detection_responder.h:22,
+                 from /home/andrespf02/esp/final2/person_detection/main/main_functions.cc:18:
+/home/andrespf02/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20240305/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/type_traits:819:5: note: declared here
+  819 |     is_pod
+      |     ^~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void measure_cpi(const char*, void (*)())':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:47:33: error: 'XTHAL_GET_CCOUNT' was not declared in this scope; did you mean 'XCHAL_HAVE_CCOUNT'?
+   47 |   uint32_t start_instructions = XTHAL_GET_CCOUNT(); // Replace with actual instruction counter if available
+      |                                 ^~~~~~~~~~~~~~~~
+      |                                 XCHAL_HAVE_CCOUNT
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:58:30: error: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Werror=format=]
+   58 |   printf("Task: %s, Cycles: %u, Instructions: %u, CPI: %f\n", task_name, cycles, instructions, cpi);
+      |                             ~^                                           ~~~~~~
+      |                              |                                           |
+      |                              unsigned int                                uint32_t {aka long unsigned int}
+      |                             %lu
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:58:48: error: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Werror=format=]
+   58 |   printf("Task: %s, Cycles: %u, Instructions: %u, CPI: %f\n", task_name, cycles, instructions, cpi);
+      |                                               ~^                                 ~~~~~~~~~~~~
+      |                                                |                                 |
+      |                                                unsigned int                      uint32_t {aka long unsigned int}
+      |                                               %lu
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void average_pool_2d()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:62:26: error: 'micro_op_resolver' was not declared in this scope
+   62 | void average_pool_2d() { micro_op_resolver.AddAveragePool2D(); }
+      |                          ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void quantize()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:63:19: error: 'micro_op_resolver' was not declared in this scope
+   63 | void quantize() { micro_op_resolver.AddQuantize(); }
+      |                   ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void max_pool_2d()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:64:22: error: 'micro_op_resolver' was not declared in this scope
+   64 | void max_pool_2d() { micro_op_resolver.AddMaxPool2D(); }
+      |                      ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void fully_connected()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:65:26: error: 'micro_op_resolver' was not declared in this scope
+   65 | void fully_connected() { micro_op_resolver.AddFullyConnected(); }
+      |                          ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void conv_2d()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:66:18: error: 'micro_op_resolver' was not declared in this scope
+   66 | void conv_2d() { micro_op_resolver.AddConv2D(); }
+      |                  ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void depthwise_conv_2d()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:67:28: error: 'micro_op_resolver' was not declared in this scope
+   67 | void depthwise_conv_2d() { micro_op_resolver.AddDepthwiseConv2D(); }
+      |                            ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void reshape()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:68:18: error: 'micro_op_resolver' was not declared in this scope
+   68 | void reshape() { micro_op_resolver.AddReshape(); }
+      |                  ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void softmax()':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:69:18: error: 'micro_op_resolver' was not declared in this scope
+   69 | void softmax() { micro_op_resolver.AddSoftmax(); }
+      |                  ^~~~~~~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc: In function 'void run_inference(void*)':
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:243:38: warning: unused variable 'icount_start' [-Wunused-variable]
+  243 |   unsigned ccount_start, ccount_end, icount_start, icount_end;
+      |                                      ^~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:256:13: warning: unused variable 'endTimeTotal' [-Wunused-variable]
+  256 |   long long endTimeTotal = 0;
+      |             ^~~~~~~~~~~~
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:257:13: warning: unused variable 'startTimePre' [-Wunused-variable]
+  257 |   long long startTimePre = 0;
+      |             ^~~~~~~~~~~~
+cc1plus: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:118: esp-idf/main/CMakeFiles/__idf_main.dir/main_functions.cc.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5675: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

@@ -21,6 +21,8 @@ limitations under the License.
 
 #include "esp_main.h"
 
+#define LED_GPIO GPIO_NUM_4
+
 #if CLI_ONLY_INFERENCE
 #include "esp_cli.h"
 #endif

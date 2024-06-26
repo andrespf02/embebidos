@@ -1,0 +1,7 @@
+/home/andrespf02/esp/final2/person_detection/main/main_functions.cc:35:10: fatal error: driver.gpio: No such file or directory
+   35 | #include "driver.gpio" /* Manejo de PINES */
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:118: esp-idf/main/CMakeFiles/__idf_main.dir/main_functions.cc.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5675: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

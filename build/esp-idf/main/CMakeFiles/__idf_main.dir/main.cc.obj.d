@@ -113,5 +113,4 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main.cc.obj: \
  /home/andrespf02/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/stream_buffer.h \
  /home/andrespf02/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h \
  /home/andrespf02/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
- /home/andrespf02/esp/final2/person_detection/main/esp_main.h \
- /home/andrespf02/esp/final2/person_detection/main/esp_cli.h
+ /home/andrespf02/esp/final2/person_detection/main/esp_main.h

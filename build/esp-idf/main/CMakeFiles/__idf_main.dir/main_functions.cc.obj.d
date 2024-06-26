@@ -406,4 +406,10 @@ esp-idf/main/CMakeFiles/__idf_main.dir/main_functions.cc.obj: \
  /home/andrespf02/esp/idf/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/timers.h \
  /home/andrespf02/esp/idf/esp-idf/components/log/include/esp_log.h \
  /home/andrespf02/esp/idf/esp-idf/components/log/include/esp_log_internal.h \
- /home/andrespf02/esp/final2/person_detection/main/esp_main.h
+ /home/andrespf02/esp/final2/person_detection/main/esp_main.h \
+ /home/andrespf02/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h \
+ /home/andrespf02/esp/idf/esp-idf/components/hal/include/hal/gpio_types.h \
+ /home/andrespf02/esp/idf/esp-idf/components/soc/esp32/include/soc/gpio_num.h \
+ /home/andrespf02/esp/idf/esp-idf/components/esp_rom/include/esp_rom_gpio.h \
+ /home/andrespf02/esp/idf/esp-idf/components/soc/esp32/include/soc/gpio_pins.h \
+ /home/andrespf02/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio_etm.h
